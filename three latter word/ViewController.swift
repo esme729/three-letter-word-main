@@ -39,8 +39,8 @@ class ViewController: UIViewController {
             }
         }
         
-        counter +=1
-        currentLetter 
+        counter += 1
+       // currentLetter
     }
     
 }
