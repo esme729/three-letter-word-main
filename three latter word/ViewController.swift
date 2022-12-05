@@ -18,30 +18,36 @@ class ViewController: UIViewController {
     @IBOutlet var wordlabel: [UILabel]!
     
     var letters:[String] = ["A","b","c","D","E","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-        var counter = 0
-        var currentLetter: String!
-
+    var counter = 0
+    var currentLetter: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         currentLetter = letters[counter]
         currentlabel.text = currentLetter
     }
-
+    
     
     @IBAction func tap(_ sender: Any) {
         let selectedPount = ((sender as! AnyObject).location(in: stackview))
-    
+        
         for label in wordlabel{
-    if label.frame.contains(selectedPount)
+            if label.frame.contains(selectedPount)
             {
                 label.text = "\(currentLetter)"
             }
         }
         
         counter += 1
-       // currentLetter
+        currentLetter = letters[counter]
+        currentlabel.text = currentLetter
+        
+        
     }
     
+//    func getAndSetCurrentletter(counter2: Int){currentletter = letters[couunter2]
+//
+//    }
+    
 }
-
